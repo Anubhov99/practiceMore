@@ -10,10 +10,24 @@ Input :
 2. An array ar of size n where each element represents the color of a sock.
 */
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class SockPair {
+
+    // using stream api (Java 8)
+    static int sockMerchant(int[] ar) {
+        return Arrays.stream(ar)
+                .boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .values()
+                .stream()
+                .mapToInt(c -> (int)(c / 2))
+                .sum();
+    }
 
     static int pairOfSocks(int num1, int[] num2){
 
