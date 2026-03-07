@@ -1,17 +1,23 @@
 package Advance;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Anagram {
     public static void main(String[] args) {
-        String str1 = "silent";
 
-        String str2 = "listen";
+        System.out.println("Enter here vvvv");
+        Scanner sc =  new Scanner(System.in);
+
+        String str1 = sc.nextLine();
+
+        String str2 = sc.nextLine();
 
 
-        if(str1==null || str2 ==null || str1.length()!=str2.length())
+        if(str1.equals(str2)|| str1.length()!=str2.length())
         {
             System.out.println("Not Anagram");
+            return;
         }
 
 
